@@ -75,6 +75,10 @@ type proc_f2fs, proc_type, fs_type;
 
 type bootdevice_sysdev, dev_type;
 
+# Storage firmware upgrade
+type ufs_firmware_update, domain;
+type ufs_firmware_update_exec, vendor_file_type, exec_type, file_type;
+
 # ZRam
 type per_boot_file, file_type, data_file_type, core_data_file_type;
 
