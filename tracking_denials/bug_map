@@ -1,4 +1,5 @@
 
+battery_mitigation sysfs file b/364446534
 chre vendor_data_file dir b/301948771
 dump_display sysfs file b/340722772
 hal_power_default hal_power_default capability b/240632824
