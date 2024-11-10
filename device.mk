@@ -80,7 +80,7 @@ PRODUCT_SOONG_NAMESPACES += \
 	vendor/google_nos/host/android \
 	vendor/google_nos/test/system-test-harness
 
-LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image.lz4
+LOCAL_KERNEL := device/google/raviole-kernel/Image.lz4
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
