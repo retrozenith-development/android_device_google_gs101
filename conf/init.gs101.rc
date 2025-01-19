@@ -93,7 +93,7 @@ on init
     chmod 0220 /proc/vendor_sched/groups/ota/set_proc_group
     chmod 0220 /proc/vendor_sched/prefer_idle_set
     chmod 0220 /proc/vendor_sched/prefer_idle_clear
-    chmod 0660 /proc/vendor_sched/pmu_poll_enable
+    chmod 0220 /proc/vendor_sched/pmu_poll_enable
     chmod 0220 /proc/vendor_sched/pmu_poll_time
     chmod 0220 /proc/vendor_sched/uclamp_fork_reset_clear
     chmod 0220 /proc/vendor_sched/uclamp_fork_reset_set
@@ -417,8 +417,8 @@ on post-fs-data
     restorecon /sys/kernel/debug/tracing/trace_marker
 
     # ranging sensor
-    chown system system /dev/ispolin_ranging
-    chmod 0660 /dev/ispolin_ranging
+    chown system system /dev/stmvl53l1_ranging
+    chmod 0660 /dev/stmvl53l1_ranging
 
     # Factory calibration files
     chmod 0771 /mnt/vendor/persist/camera
@@ -627,8 +627,8 @@ service abox /vendor/bin/main_abox 17c50000.abox
     group audioserver
     seclabel u:r:abox:s0
 
-# on userdebug and eng builds, enable kgdb on the serial console
-on property:ro.debuggable=1
+# on eng builds, enable kgdb on the serial console
+on property:ro.build.type=eng
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
 
